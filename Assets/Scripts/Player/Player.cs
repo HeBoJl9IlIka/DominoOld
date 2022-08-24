@@ -1,9 +1,10 @@
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerTakingDomino))]
+[RequireComponent(typeof(PlayerDropDomino))]
 public class Player : MonoBehaviour
 {
     [SerializeField] private GameObject _domino;
-
     [SerializeField] private PlayerTakingDomino _playerTakingDomino;
     [SerializeField] private PlayerDropDomino _playerDropDomino;
 

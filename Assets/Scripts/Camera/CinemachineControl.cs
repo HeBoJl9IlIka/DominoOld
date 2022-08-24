@@ -17,7 +17,7 @@ public class CinemachineControl: MonoBehaviour
     private void OnDisable()
     {
         _dominoPlace.AllShowed -= OnAllShowed;
-        _lastDomino.Finished += OnFinished;
+        _lastDomino.Finished -= OnFinished;
     }
 
     private void OnAllShowed()

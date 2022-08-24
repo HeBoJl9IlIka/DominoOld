@@ -13,12 +13,12 @@ public class RobotTakingOre : MonoBehaviour
         _robot = GetComponent<Robot>();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.collider.TryGetComponent(out Ore ore))
+        if(other.TryGetComponent(out Ore ore))
         {
             if (_robot.IsFull)
-                return; 
+                return;
 
             Taked?.Invoke();
             ore.gameObject.SetActive(false);

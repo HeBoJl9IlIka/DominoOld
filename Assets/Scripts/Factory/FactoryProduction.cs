@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class FactoryProduction : MonoBehaviour
 {
-    private const int _needAmount = 5;
+    private const int _needAmount = 2;
 
     [SerializeField] private FactoryWarehouse _factoryWarehouse;
     [SerializeField] private DominoSpawning[] _dominos;

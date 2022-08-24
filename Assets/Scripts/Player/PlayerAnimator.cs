@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerMovement))]
@@ -8,13 +6,12 @@ public class PlayerAnimator : MonoBehaviour
     private const string IsMoving = "IsMoving";
 
     [SerializeField] private Joystick _joystick;
+    [SerializeField] private Animator _animator;
 
     private PlayerMovement _playerMovement;
-    private Animator _animator;
 
     private void Start()
     {
-        _animator = GetComponent<Animator>();
         _playerMovement = GetComponent<PlayerMovement>();
     }
 

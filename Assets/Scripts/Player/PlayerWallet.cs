@@ -4,6 +4,8 @@ using UnityEngine.Events;
 
 public class PlayerWallet : MonoBehaviour
 {
+    private const int MoneyStep = 3;
+
     [SerializeField] PointDomino[] _dominos;
 
     private int _money;
@@ -53,9 +55,9 @@ public class PlayerWallet : MonoBehaviour
 
     private IEnumerator Add(int money)
     {
-        for (int i = 0; i < money; i++)
+        for (int i = 0; i < money / MoneyStep; i++)
         {
-            ++_money;
+            _money += MoneyStep;
             Changed?.Invoke(_money);
             yield return null;
         }

@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class Reward : MonoBehaviour
@@ -26,11 +25,6 @@ public class Reward : MonoBehaviour
 
     private void OnShowed(int price)
     {
-        StartCoroutine(Show(price));
-    }
-
-    private IEnumerator Show(int price)
-    {
         int amountMoney = price / Multiplier;
 
         if (amountMoney > _moneys.Length)
@@ -39,8 +33,6 @@ public class Reward : MonoBehaviour
         for (int i = 0; i < amountMoney; i++)
         {
             _moneys[i].gameObject.SetActive(true);
-
-            yield return null;
         }
     }
 }
